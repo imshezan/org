@@ -1,0 +1,161 @@
+<html>
+<head>
+
+    {% load staticfiles %}
+    <title>Social institute</title>
+
+
+    <link href="{% static 'css/style.css'%}" rel="stylesheet" type="text/css"  media="all" />
+    <link href="{% static 'css/bootstrap.css'%}" rel="stylesheet" type="text/css" media="all">
+
+    <link href="{% static 'http://fonts.googleapis.com/css?family=Raleway'%}" rel='stylesheet' type='text/css'>
+    <link href="{% static 'css/responsiveslides.css' %}" rel="stylesheet" >
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Social Institute, A Non-government voluntary organization."/>
+</head>
+
+<body>
+<!-- start-header -->
+<div class="header">
+    <!-- start-container -->
+    <div class="container">
+        <!---start-top-header---->
+        <div class="top-header">
+            <div class="top-header-left">
+                <p>Social Institute</p>
+                <p>A Non-government voluntary organization.</p>
+            </div>
+            <div class="top-header-right">
+                <div class="top-header-contact-info">
+                    <p><a href="/news/press/">PRESS</a>| <a href="/news/contact-us/">PARTNER WITH US</a> | <a href="/news/career/">CAREER</a></p>
+                    <span><a href="/news/contact-us/">Contact Us</a> | <a href="/news/contact-us/">Visit Us</a></span>
+                </div>
+                <div class="top-header-contact-account">
+                    <div class="social">
+                        <ul>
+                            <li><a href="#"><i class="facebook"></i></a></li>
+                            <li><a href="#"><i class="twitter"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+        <!---End-top-header---->
+        <!----start-main-header----->
+        <div class="main-header">
+            <div class="logo">
+                <a href="/news/index"><img src="{% static 'images/logo2.png' %} " title="logo" /></a>
+            </div>
+            <div class="top-nav">
+                <span class="menu"></span>
+
+                <ul>
+                    <li><a href="/news/who-we-are/">Who we are </a></li>
+                    <li><a href="/news/what-we-do/">What we do</a></li>
+                    <li><a href="/news/where-we-work/">where we work</a></li>
+                    <li><a href="/news/gallery/">Gallery</a></li>
+                    <li><a href="/news/press/">press</a></li>
+                    <li><a href="/news/donate/">Donate</a></li>
+                    <div class="clearfix"> </div>
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+        <div class="grid_12">
+            <img src="{% static 'images/clr.jpg' %}" class="img-responsive">
+        </div>
+         <!-- script-for-menu -->
+		 <script>
+				$("span.menu").click(function(){
+					$(".top-nav ul").slideToggle("slow" , function(){
+					});
+				});
+		 </script>
+		 <!-- script-for-menu -->
+
+
+
+    </div>
+</div>
+
+<!----End-main-header, Nav ----->
+
+<!---start-content-->
+<div class="container">
+    <!---start-blog-->
+    <div class="blog">
+
+
+    </div>
+    <!-- post section rendering-->
+
+    <!-- POST AREA -->
+
+
+
+                                    {% block content %}
+
+
+
+
+
+
+
+
+
+                                    {% endblock %}
+
+				<!--End-blog-->
+
+    <!-- footer -->
+
+
+    <div class="footer">
+        <div class="container">
+            <div class="col-md-3 ftr_navi ftr">
+                <h3>NAVIGATION</h3>
+                <ul>
+                    <li><a href="#">Who we are </a></li>
+                    <li><a href="#">What we do</a></li>
+                    <li><a href="#">Mission</a></li>
+                    <li><a href="#">where we work</a></li>
+                    <li class="active"><a href="#">Press</a></li>
+                    <li><a href="contact.html">Donate</a></li>
+                    <div class="clearfix"> </div>
+                </ul>
+            </div>
+            <div class="col-md-3 ftr_navi ftr">
+                <h3>MEMBERS</h3>
+                <ul>
+                    <li><a href="#">Support</a></li>
+                    <li><a href="#">Contacts</a></li>
+                    <li><a href="#">Our Branches</a></li>
+                    <li><a href="#">Our Calendar</a></li>
+                    <li><a href="#">Trainings</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3 get_in_touch ftr">
+                <h3>GET IN TOUCH</h3>
+                <p>MOUMI BHABAN,</p>
+                <p>Mirpur, Dhaka.</p>
+                <p>+88-01xx-xxxxxx/p>
+                <p>email[at]example-site.com</p>
+                <a href="example@gmil.com">www.socialInstitute.org</a>
+            </div>
+            <div class="col-md-3 ftr-logo">
+                <a href="#"><img src="{% static 'images/frt-lg.png' %}" alt=""/></a>
+                <p>&copy; <a href="https://www.facebook.com/Wizimg-828348184026272/">Wizimg</a> </p>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
+
+<script src="{% static 'http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js' %}"></script>
+<script src="{% static 'http://code.jquery.com/jquery-1.11.1.min.js' %}"></script>
+</body>
+</html>

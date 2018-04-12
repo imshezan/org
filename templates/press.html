@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{% for post in posts %}
+<div class="container-fluid">
+    <div>
+        <div class="images_3_of_1">
+            {% if post.image %}
+            <div>
+                <img src="{{post.image.url}}">
+            </div>
+            {% endif %}
+
+            {%if post.category %}
+            <p><span>{{post.category}}</span></p>
+
+            {% endif %}
+        </div>
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <h1 class="display-3"><a href="{% url 'post' post.pk %}">{{ post.title }}</a></h1>
+                    <p class="lead"> {{post.description|truncatewords:30}} </p>
+            </div>
+        </div>
+    </div>
+    <div class="artical-links">
+        <ul>
+            <li><img src="{{STATIC_URL}}/static/images/blog-icon1.png" title="date"><span>{{post.timestamp}}</span></li>
+            <li><a href=""><img src="{{STATIC_URL}}/static/images/blog-icon2.png" title="Admin"><span>admin</span></a></li>
+            <li><a href=""><img src="{{STATIC_URL}}/static/images/blog-icon3.png" title="Comments"><span>comments</span></a></li>
+
+            {% if post.category %}
+            <li><a href="news/category/{{post.category.id}}"><img src="{{STATIC_URL}}/static/images/blog-icon4.png" title="Category"><span>Category:{{post.category}}</span></a></li>
+            {% endif %}
+
+            <li><a href=""><img src="{{STATIC_URL}}/static/images/blog-icon5.png" title="permalink"><span>permalink</span></a></li>
+
+        </ul>
+
+    </div>
+
+        <div class="projects-pagnation">
+        {% if post.has_next %}
+        <ul>
+            <li><a href="?page={{ contacts.next_page_number }}">next</a></li>
+            <li><a href="?page={{ contacts.paginator.num_pages }}">last &raquo;</a></li>
+        </ul>
+        {% endif %}
+
+    </div>
+
+</div>
+</br>
+</hr>
+</br>
+{% endfor %}
+
+{% endblock %}

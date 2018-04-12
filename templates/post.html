@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+<div class="container-fluid">
+
+    <div>
+        <div class="images_3_of_1">
+            {% if spost.image %}
+            <div>
+                <img src="{{spost.image.url}}">
+            </div>
+            {% endif %}
+
+            {%if spost.category %}
+            <p><span>{{spost.category}}</span></p>
+
+            {% endif %}
+        </div>
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <h1 class="display-3">{{ spost.title }}</h1>
+                    <p class="lead"> {{spost.description}}  </p>
+            </div>
+        </div>
+    </div>
+    <div class="artical-links">
+        <ul>
+            <li><img src="{{STATIC_URL}}/static/images/blog-icon1.png" title="date"><span>{{spost.timestamp}}</span></li>
+            <li><a href=""><img src="{{STATIC_URL}}/static/images/blog-icon2.png" title="Admin"><span>admin</span></a></li>
+            <li><a href=""><img src="{{STATIC_URL}}/static/images/blog-icon3.png" title="Comments"><span>comments</span></a></li>
+
+             {% if spost.category %}
+            <li><a href="/?category={{spost.category.pk}}"><img src="{{STATIC_URL}}/static/images/blog-icon4.png" title="Category"><span>Category:{{spost.category}}</span></a></li>
+            {% endif %}
+            <li><a href=""><img src="{{STATIC_URL}}/static/images/blog-icon5.png" title="permalink"><span>permalink</span></a></li>
+
+        </ul>
+    </div>
+</div>
+</br>
+</hr>
+</br>
+
+{% endblock %}
